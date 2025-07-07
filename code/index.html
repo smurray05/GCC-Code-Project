@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charity: Water</title>
+  <!-- Import a simple font for the page -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Basic box sizing and font for all elements */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    body {
+      background-color: white;
+      color: #002855;
+    }
+
+    /* Header styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background-color: white;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* Logo image style */
+    .logo-img {
+      height: 32px;
+      width: auto;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    /* Navigation button style */
+    nav button {
+      background-color: #002855;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* Main section layout */
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      background: #74a5b6;
+      padding: 2rem;
+    }
+
+    /* Text content styles */
+    .text-content {
+      flex: 1 1 350px;
+      max-width: 600px;
+      padding: 2rem;
+    }
+
+    .text-content h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .text-content p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Button styles */
+    .text-content .btn {
+      display: inline-block;
+      background-color: #002855;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Image content styles */
+    .image-content {
+      flex: 1 1 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .image-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Section headline style */
+    .section-headline {
+      text-align: center;
+      font-size: 2rem;
+      margin: 3rem 1rem 2rem;
+      color: #002855;
+    }
+
+    /* Columns for facts and info */
+    .columns {
+      display: flex;
+      justify-content: space-around;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .column {
+      flex: 1 1 300px;
+      background: white;
+      border: 3px solid #002855;
+      padding: 2rem;
+      border-radius: 10px;
+      color: #002855;
+      opacity: 0; /* Start hidden for fade-in */
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    /* Show columns when visible */
+    .column.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .column h2 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .column p {
+      font-size: 1rem;
+    }
+
+    /* Bottom images section */
+    .bottom-images {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .bottom-images img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Mission section styles */
+    .mission-section {
+      background-color: #74a5b6;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .mission-box {
+      background-color: #002855;
+      color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive styles for smaller screens */
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+      }
+      .columns {
+        flex-direction: column;
+        align-items: center;
+      }
+      .bottom-images {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with logo and navigation -->
+  <header>
+    <div class="logo">
+      <!-- Logo image -->
+      <img src="water-can-transparent.png" alt="Water can logo" class="logo-img">
+      charity: water
+    </div>
+    <nav>
+      <!-- Button to scroll to mission section -->
+      <button onclick="document.getElementById('mission').scrollIntoView({ behavior: 'smooth' });">Learn More</button>
+    </nav>
+  </header>
+
+  <!-- Main section with headline and image -->
+  <div class="main">
+    <div class="text-content">
+      <h1>Protect water access. <br>Promote public health. <br>Help billions—all from campus.</h1>
+      <p>Make clean water universal. Meaningful change, clicks away.</p>
+      <!-- Buttons to scroll to different sections -->
+      <a href="#columns" class="btn">Make a Difference</a>
+      <a href="#mission" class="btn">Our Mission</a>
+    </div>
+    <div class="image-content">
+      <!-- Main image -->
+      <img src="child_water_pump.jpg" alt="Child using water pump">
+    </div>
+  </div>
+
+  <!-- Headline about water insecurity -->
+  <div id="columns" class="section-headline">
+    Fact: Over 2 billion people globally struggle with water insecurity.
+  </div>
+
+  <!-- Three columns explaining the project -->
+  <div class="columns">
+    <div class="column">
+      <h2>What You Can Do</h2>
+      <p>Spreading awareness and cultivating donations from campus is the first step in this project. Generating these resources starts with you.</p>
+    </div>
+    <div class="column">
+      <h2>Where We Come In</h2>
+      <p>Your work here is done. We pool your resources into valuable social programs and charity services that aim to better the lives of people all around the world. Resources go towards maintaining infrastructure, healthcare, and basic human health in disadvantaged areas.</p>
+    </div>
+    <div class="column">
+      <h2>Tangible Change</h2>
+      <p>This is where your work manifests! We have boots on the ground in water-scarce areas that implement all of the changes and support that your contributions make possible! Thanks to you, billions have a fighting chance to live healthily.</p>
+    </div>
+  </div>
+
+  <!-- Images showing the impact of the project -->
+  <div class="bottom-images">
+    <img src="water_comparision.jpg" alt="Support work 1">
+    <img src="clean_water_landscape.jpg" alt="Support work 2">
+  </div>
+
+  <!-- Mission statement section -->
+  <div id="mission" class="mission-section">
+    <div class="mission-box">
+      Safe drinking water is much more than a basic human need. It's the foundation for improved health, education, and economic opportunity. Where clean water flows, communities flourish. At Charity:Water, it's our mission to bring clean drinking water to every person on the planet.
+    </div>
+  </div>
+
+  <!-- Simple contact section for students to get involved -->
+  <div class="mission-section">
+    <div class="mission-box">
+      <!-- Contact headline -->
+      <h2 style="margin-bottom: 1rem;">Get Involved</h2>
+      <!-- Contact instructions -->
+      <p>Want to help or have questions? Email us at <a href="mailto:info@charitywater.org" style="color: #fdd835; text-decoration: underline;">info@charitywater.org</a> or talk to your campus ambassador!</p>
+    </div>
+  </div>
+
+  <!-- Script for fade-in effect on columns -->
+  <script>
+    // This code makes the three boxes fade in when you scroll to them
+    // Get all the boxes with the class "column"
+    const columns = document.querySelectorAll('.column');
+
+    // This function checks if each box is visible on the screen
+    function checkColumns() {
+      columns.forEach(function(column) {
+        const rect = column.getBoundingClientRect();
+        // If the top of the box is less than 100px from the bottom of the screen, show it
+        if (rect.top < window.innerHeight - 100) {
+          column.classList.add('visible');
+        }
+      });
+    }
+
+    // Run the function when you scroll or when the page loads
+    window.addEventListener('scroll', checkColumns);
+    window.addEventListener('load', checkColumns);
+  </script>
+</body>
+</html>
+<!-- 
+  Thank you for viewing our Charity: Water project!
+  This is the end of the HTML file.
